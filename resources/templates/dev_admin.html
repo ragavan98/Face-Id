@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> FACEID Dev_Admin  </title>
+
+ <link rel="stylesheet" href="/css/style.css" type="text/css" media="all">
+<style>
+	table {
+	  border-collapse: collapse;
+	}
+	
+	th, td {
+	  text-align: left;
+	  padding: 8px;
+	}
+	
+	tr:nth-child(even){background-color: #E7DAF3}
+	
+	th {
+	  background-color: #4CAF50;
+	  color: white;
+	}
+	.txt{margin-left:125px;
+		 margin-top:80px;}
+	.txt1{text-align:center};
+</style>
+</head>
+<body>
+	
+	<section class='main'>
+	  <div class='layer'>
+	     <div class='bottom-grid'>
+		        <div class='col'>
+			     <h1>  FACE ID </h1>
+				 </div>
+				 
+				<div class="links">
+			 <ul class="links-unordered-list1">
+			        <li class='col2' >
+						<a href="" class="col2">Edit</a>
+					</li>
+					</ul>
+			</div>
+		
+		</div>
+						<div class="txt">
+							<table>
+							<col width="200">
+							<col width="200">
+							<col width="400">
+							<col width="200">
+								<tr>
+									<th> DEVELOPER ID </th>
+									<th> APPLICATION NAME </th>
+									<th> APPLICATION URL </th>
+									<th> CLIENT ID </th>
+								</tr>
+  
+								<tr th:each="c:${clients}">
+									<td th:text="${c.developerid}"></td>
+									<td th:text="${c.appname}"></td>
+									<td th:text="${c.appuri}"></td>
+									<td th:text="${c.clientid}"></td>
+								</tr>
+							</table>
+						</div>
+		     	</div>
+	</section>
+	
+</body>
+</html>

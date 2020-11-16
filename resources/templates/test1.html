@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Webcam</title>
+</head>
+
+<body>
+
+    <input type="text" id="name" placeholder="Name" />
+    <input type="text" id="emailId" placeholder="Email-Id" />
+
+    <div class="video-wrap">
+        <video id="video" playsinline autoplay></video>
+        <canvas id="canvas" width="640" height="480"></canvas>
+    </div>
+    <!-- Image loader -->
+    <div id='loader' style='display: none;'>
+        <img src='reload.gif' width='32px' height='32px'>
+    </div>
+    <!-- Image loader -->
+    <div class="controller">
+        <button id="snap">Capture</button>
+
+    </div>
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+    <script>
+        'use strict';
+        //let responseValue;
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const snap = document.getElementById('snap');
+        const errorMsgElement = document.getElementById('spanErrorMsg');
+        const constraints = {
+            audio: false,
+            video: {
+                width: 1280,
+                height: 720
+            }
+        };
+        async function init() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                handleSuccess(stream);
+            } catch (err) {
+                errorMsgElement.innerHTML = `navigator.getUserMedia.error:${err.toString()}`;
+            }
+        }
+
+        function handleSuccess(stream) {
+            window.stream = stream;
+            video.srcObject = stream;
+        }
+        init();
+        var context = canvas.getContext('2d')
+            // let method = async() => {
+            //     console.log('in method')
+            //     var name = document.getElementById('name').value;
+            //     var emails = document.getElementById('email').value;
+            //     await fetch("https://localhost:4000/hello", {
+            //         method: 'POST',
+            //         // body: JSON.stringify({
+            //         //     title: name,
+            //         //     body: emails,
+            //         // }),
+            //         headers: {
+            //             // "Content-Type": "application/json; charset=UTF-8"
+            //             "Access-Control-Allow-Origin": "*",
+            //             "Content-Type": "application/json"
+            //         }
+            //     }).then(function(res) {
+            //         return res.json();
+            //     }).then(function(data) {
+            //         console.log(data)
+            //     })
+            // }
+
+        // let writeMethod = async function() {
+        //     var ctx = canvas.getContext('2d');
+        //     ctx.drawImage(video, 0, 0, 640, 480);
+        //     return String(canvas.toDataURL().textContent);
+        // }
+
+        // let capImage = async function() {
+
+        //     let encodeValue;
+        //     let temp = 10
+        //     for (let i = 0; i < 10; i++) {
+        //         temp = temp - 1;
+        //         //alert("LOOK HERE and take " + temp + " more picture");
+
+        //         encodeValue = writeMethod()
+
+        //         if (i < 9) {
+        //             let deli = '#hereTheDelimitter#'
+        //             encodeValue = encodeValue.concat(deli);
+        //             console.log(encodeValue)
+        //         }
+        //     }
+        //     return encodeValue
+
+        // }
+        let value1, value2, value3, value4, value5, value6, value7, value8, value9, value10;
+        let assigningMethod = async function() {
+            function sleepy(milliseconds) {
+                let timeStart = new Date().getTime();
+                while (true) {
+                    let elapsedTime = new Date().getTime() - timeStart;
+                    if (elapsedTime > milliseconds) {
+                        break;
+                    }
+                }
+            }
+            context.drawImage(video, 0, 0, 640, 480);
+            value1 = canvas.toDataURL()
+            console.log(value1)
+            sleepy(1000);
+
+
+            context.drawImage(video, 0, 0, 640, 480);
+            value2 = canvas.toDataURL()
+            console.log(value2)
+            sleepy(1000);
+
+            context.drawImage(video, 0, 0, 640, 480);
+            value3 = canvas.toDataURL()
+            console.log(value3)
+            sleepy(1000);
+
+            context.drawImage(video, 0, 0, 640, 480);
+            value4 = canvas.toDataURL()
+            console.log(value4)
+            sleepy(1000);
+
+            context.drawImage(video, 0, 0, 640, 480);
+            value5 = canvas.toDataURL()
+            console.log(value5)
+            sleepy(1000);
+
+            context.drawImage(video, 0, 0, 640, 480);
+            value6 = canvas.toDataURL()
+            console.log(value6)
+            sleepy(1000);
+
+            context.drawImage(video, 0, 0, 640, 480);
+            value7 = canvas.toDataURL()
+            console.log(value7)
+            sleepy(1000);
+
+            context.drawImage(video, 0, 0, 640, 480);
+            value8 = canvas.toDataURL()
+            console.log(value8)
+            sleepy(1000);
+
+            context.drawImage(video, 0, 0, 640, 480);
+            value9 = canvas.toDataURL()
+            console.log(value9)
+            sleepy(1000);
+
+            context.drawImage(video, 0, 0, 640, 480);
+            value10 = canvas.toDataURL()
+            console.log(value10)
+            sleepy(1000);
+
+
+            context.drawImage(video, 0, 0, 640, 480);
+
+        }
+        let methods = async function() {
+            let responseValue;
+            var name = document.getElementById('name').value;
+            var emailValue = document.getElementById('emailId').value;
+            //var b64Value = returnedValue;
+            console.log(typeof(canvas.toDataURL()));
+
+            //console.log(b64Value);
+            console.log('in method')
+                // var bValue = {
+                //     value1: value1,
+                //     value2: value2,
+                //     value3: value3,
+                //     value4: value4,
+                //     value5: value5,
+                //     value6: value6,
+                //     value7: value7,
+                //     value8: value8,
+                //     value9: value9,
+                //     value10: value10
+                // };
+                //let encodedValue = JSON.stringify(bValue)
+                //console.log(encodedValue);
+
+            $.post("http://localhost:8081/facelogin2", {
+                    name: name,
+                    emailValue: emailValue,
+                    value1: value1,
+                    value2: value2,
+                    value3: value3,
+                    value4: value4,
+                    value5: value5,
+                    value6: value6,
+                    value7: value7,
+                    value8: value8,
+                    value9: value9,
+                    value10: value10
+                },
+                async function(data, status) {
+                    console.log("first method" + data.name);
+                    $.post("http://localhost:8081/facelogin1", {
+                            data: data.name
+                        }, async function(datas, status) {
+                            console.log("second method" + datas.data)
+                        })
+                        //alert("Data: " + data + "\nStatus: " + status);
+                        //console.log(data)
+                });
+            //return responseValue;
+        }
+
+      //  let anotherMethod = async function(r) {
+      //      $.post("http://localhost:8081/facelogin1/", {
+      //          data: r
+      //      }, async function(data, status) {
+      //          console.log(data)
+      //      })
+      //  }
+
+
+
+
+
+        snap.addEventListener("click", async function(e) {
+            //e.preventDefault();
+            //methods();
+            //console.log(canvas.toDataURL());
+            context.drawImage(video, 0, 0, 640, 480);
+            assigningMethod();
+
+            methods();
+            //anotherMethod(r);
+
+            // var imgData = canvas.toDataURL('image/png');
+            // var doc = new jsPDF('p', 'mm');
+            // doc.addImage(imgData, 'jpg', 10, 10);
+            // doc.save('sample-file.jpg');
+            // canvas.toBlob(function(blob) {
+            //     saveAs(blob, "test.jpg");
+            // })
+            // var img = canvas.toDataURL("image/png");
+            // document.write('<img src="' + img + '"/>');
+
+
+            // var link = document.createElement('a');
+            // link.download = 'filename.png';
+            // link.href = document.getElementById('canvas').toDataURL()
+            // link.click();
+
+
+            // var imgData = canvas.toDataURL();
+            // console.log(typeof(imgData))
+            // const Url = 'localhost:4000/hello';
+            // const data = {
+            //     value: imgData
+            // }
+            // $.post(Url, function(data, status) {
+            //     console.log(`${data} and status is ${status}`)
+            // })
+
+
+
+
+
+
+        })
+    </script>
+
+</body>
+
+</html>

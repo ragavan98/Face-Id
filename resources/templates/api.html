@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> FACE ID API GENERATION </title>
+
+ <link rel="stylesheet" href="/css/style.css" type="text/css" media="all">
+ 
+<script type="text/javascript" >
+   function preventBack(){window.history.forward();}
+    setTimeout("preventBack()", 0);
+    window.onunload=function(){null};
+</script>
+<style>
+	table {
+	  border-collapse: collapse;
+	}
+	
+	th, td {
+	  text-align: left;
+	  padding: 8px;
+	}
+	
+	tr:nth-child(even){background-color: #f2f2f2}
+	
+	th {
+	  background-color: #4CAF50;
+	  color: white;
+	}
+	.txt{margin-left:125px;
+		 margin-top:80px;}
+	.txt1{text-align:center};
+</style>
+</head>
+<body>
+    
+	<section class='main1'>
+	  <div class='layer'>
+	     <div class='bottom-grid'>
+		        <div class='col'>
+			     <h1>  FACE ID </h1>
+				 </div>
+				 
+			<div class="links">
+			 <ul class="links-unordered-list">
+			        <li class='active'>
+						<a href="" class="">API</a>
+					</li>
+					<li class="">
+						<div class="dropdown">
+							<a href="" class="">PROFILE</a>
+							   <div class="col">
+								<div class="dropdown-content">
+									<br><a></a><hr>
+									<a href="/" >Logout</a>
+									
+									
+								</div>
+								</div>
+							</div>
+					</li>
+				</ul>
+		</div>
+		</div>
+		
+		<div class='bottom-grid'>
+		   <form action="/getsecret" method="post" id ='api_form'>
+					
+						<br>
+						<div class="wthree-field">
+							<input name="appname" id="appname" type="text" value="" placeholder="APPLICATION NAME" required>
+						</div>
+						<br>
+					    <div class="wthree-field">
+							<input name="appuri" id="appuri" type="text" value="" placeholder="APPLICATION URL" required>
+						</div>
+						<br>
+						
+						<br>
+						<div class="wthree-field">
+						<button type="submit" class="btn">GENERATE API KEY</button>
+					</div>
+						<br>
+			</form>
+			
+						
+		</div>
+                       <div class="txt">
+							<table>
+							<col width="200">
+							<col width="200">
+							<col width="300">
+								<tr>
+									<th> APPLICATION NAME</th>
+									<th> CLIENT ID </th>
+									<th> CLIENT SECRETE KEY </th>
+								</tr>
+  
+								<tr th:each="client:${clients}">
+									<td th:text="${client.appname}"></td>
+									<td th:text="${client.clientid}"></td>
+									<td th:text="${client.clientsecret}"></td>
+								</tr>
+							</table>
+			</div>
+
+		<br>
+
+		<div class="txt1"><b>This CLIENT ID and CLIENT SECRETE KEY only VALID for 30days...</b></div>
+		
+		
+		<div class="bottom-grid1">
+			<div class="links">
+				<ul class="links-unordered-list1">
+				<br>
+				<br>
+				<br>
+				<br>
+					<li class="">
+						<a href="about_us.html" class=""><b>About Us</b></a>
+					</li>
+					<li class="">
+						<a href="privacy.html" class=""><b>Privacy Policy</b></a>
+					</li>
+					
+				</ul>
+				</div>
+				</div>
+				</div>
+	</section>
+	
+	
+</body>
+</html>
